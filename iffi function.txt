@@ -1,0 +1,189 @@
+//Print odd numbers in an array
+
+
+(function odd(e)
+{
+      arr=[];
+    for(let i=0;i<e.length;i++)
+      {
+         if(e[i]%2!=0)
+         
+         arr.push(e[i]);
+      }
+      console.log(arr);
+})([1,2,3,4,5,6,7,8,9,10]);
+-----------------------------------------------------
+
+//Convert all the strings to title caps in a string array
+
+(function cap(e)
+{
+    let str;
+      str=(e[0].split(""));
+       //console.log(str[1]);
+       let temp=[];
+      
+          temp.push(str[0].toUpperCase())
+      
+         for(let i=1;i<str.length;i++)
+         {  
+              if(str[i]==' ')
+              {
+                 temp.push(" "+(str[i+1].toUpperCase()));
+                   i++;
+              }
+              else if(str[i]!=' ') 
+              {
+                  temp.push(str[i].toLowerCase());
+              }
+              
+         }
+       
+         console.log(temp.join(""));
+    
+})(["this is my first iffi problem"]);
+-------------------------------------------------------
+
+//Sum of all numbers in an array
+
+(function sum(e)
+{
+    let sum=0;
+    
+    for(let i=0;i<e.length;i++)
+    {
+         sum =sum + e[i];
+    }
+    console.log(sum);
+   
+})([45,3,7,10]);
+--------------------------------------------------------
+
+//Return all the prime numbers in an array
+
+(function prime(n)
+{
+  let temp=[];
+  
+    for(let i=0;i<=n.length;i++)
+    {
+        let count=0;
+        
+        for(let j=1;j<=n[i];j++)
+        {
+            if(n[i]%j==0)
+            {
+                count++;
+            }
+        }
+        
+       if(count==2)
+       {
+           temp.push(n[i]);
+       }
+    }
+    
+    console.log("prime number is:" + temp);
+    
+})([1,2,3,4,5,6,7,8,9,10]);
+---------------------------------------------
+//Return all the palindromes in an array
+
+
+(function poly(n)
+{
+    
+    let temp="";
+    let str="";
+   
+     for(let i=0;i<n.length;i++)
+     {
+        str += n[i];                                        
+        let count=0;
+           
+           for(let j=0;j<str.length;j++)           
+           {
+               if(str[j]==str[str.length-1-j])    
+               {
+                   count++;                         
+               }
+           }
+           if(count==str.length)
+           {
+               temp+=str +" "
+           }
+      
+      str= "";
+     }
+     console.log("polymdrome is:"+temp);
+    
+  
+    
+})(["madam","racecar",121,232,334]);
+-----------------------------------------------------------------
+
+//Return median of two sorted arrays of the same size.
+
+
+(function median(arr1,arr2)
+{
+ let temp=[];
+ 
+ let i=0;                                        
+ let j=0;
+ let med=0;
+ 
+  while(i<=arr1.length && j<arr2.length)                                                                             
+  {
+      if(arr1[i]<arr2[j])                                
+      {
+          temp.push(arr1[i]);
+          i++;                                
+      }
+      
+      else
+      { 
+          temp.push(arr2[j]);
+          j++;                                                                             
+      }
+  }
+  
+  console.log(temp);
+  
+  if(temp.length%2==0)
+  {
+     med=(temp[(temp.length/2)-1]+temp[(temp.length/2)]) /2;
+  }
+  else if(temp.length%2!=0)
+  {
+      med=temp[Math.floor(temp.length/2)];
+  }
+  console.log("median of two sorted arrays:"+ med);
+    
+    
+})([1,2,4,6,9,12,13],[3,5,7,8,10,11,14])
+------------------------------------------------------------
+
+//Remove duplicates from an array
+
+(function duplicate(arr)
+{
+    let original_Arr= [...new Set(arr)];
+    console.log(original_Arr);
+    
+})([1,2,3,4,2,4,5,6,8,5,3,7])
+-------------------------------------------------------------------
+
+//Rotate an array by k times
+
+
+(function rotate( arr,k)
+{
+    for(i=0;i<k;i++)
+    {
+        arr.unshift(arr.pop());
+    }
+    console.log(arr);
+    
+})([1,2,3,4,5],3)
+---------------------------------------------------------------

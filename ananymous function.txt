@@ -1,0 +1,166 @@
+//Print odd numbers in an array
+
+let odd = function(a){
+ 
+      if(a%2!==0)
+      {
+         return a;
+      }
+}
+
+let a=[1,2,3,4,5,6,7,8,9,10];
+console.log(a.filter(odd));
+-------------------------------------
+//Convert all the strings to title caps in a string array
+
+let titleCap=function cap(e)
+{
+    let str;
+      str=(e[0].split(""));
+       
+        let temp=[];
+      
+          temp.push(str[0].toUpperCase())
+      
+         for(let i=1;i<str.length;i++)
+         {  
+              if(str[i]==' ')
+              {
+                 temp.push(" "+(str[i+1].toUpperCase()));
+                   i++;
+              }
+              else if(str[i]!=' ') 
+              {
+                  temp.push(str[i].toLowerCase());
+              }
+              
+         }
+       
+         console.log(temp.join(""));
+    
+} 
+ titleCap(["this is my first iffi problem"]);
+---------------------------------------------------------------
+
+//Sum of all numbers in an array
+
+
+let sum=function sum(e)
+{
+    let sum=0;
+    
+    for(let i=0;i<e.length;i++)
+    {
+         sum =sum + e[i];
+    }
+    console.log(sum);
+   
+}
+sum([45,3,7,10]);
+----------------------------------------------------------------
+//Return all the prime numbers in an array
+
+
+let prime=function prime(n)
+{
+  let temp=[];
+  
+    for(let i=0;i<=n.length;i++)
+    {
+        let count=0;
+        
+        for(let j=1;j<=n[i];j++)
+        {
+            if(n[i]%j==0)
+            {
+                count++;
+            }
+        }
+        
+       if(count==2)
+       {
+           temp.push(n[i]);
+       }
+    }
+    
+    console.log("prime number is:" + temp);
+    
+}
+prime([1,2,3,4,5,6,7,8,9,10]);
+------------------------------------------------
+//Return all the palindromes in an array
+
+let polylindrome = function (e) {
+    
+  return e.filter((item) => {
+      
+    let temp = item + "";
+    if (temp.split("").reverse().join("") === temp) 
+    return item;
+  });
+};
+console.log("polylindrome: "+polylindrome([121,"madam", 123, 199, 999, 200, "racecar"]));
+------------------------------------------------------------------------------------------------
+//Return median of two sorted arrays of the same size
+
+let median=function(arr1,arr2)
+{
+ let temp=[];
+ 
+ let i=0;                                        
+ let j=0;
+ let med=0;
+ 
+  while(i<=arr1.length && j<arr2.length)                                                                             
+  {
+      if(arr1[i]<arr2[j])                                
+      {
+          temp.push(arr1[i]);
+          i++;                                
+      }
+      
+      else
+      { 
+          temp.push(arr2[j]);
+          j++;                                                                             
+      }
+  }
+   
+  console.log(temp);
+  
+  if(temp.length%2==0)
+  {
+     med=(temp[(temp.length/2)-1]+temp[(temp.length/2)]) /2;
+  }
+  else if(temp.length%2!=0)
+  {
+      med=temp[Math.floor(temp.length/2)];
+  }
+  console.log("median of two sorted arrays:"+ med);
+       
+}
+median([1,2,4,6,9,12,13],[3,5,7,8,10,11,14]);
+---------------------------------------------------------------------
+//Remove duplicates from an array
+
+let duplicate=function duplicate(arr)
+{
+    let original_Arr= [...new Set(arr)];
+    console.log(original_Arr);
+    
+}
+duplicate([1,2,3,4,2,4,5,6,8,5,3,7]);
+------------------------------------------------------------------------
+//Rotate an array by k times
+
+let Rotate=function rotate( arr,k)
+{
+    for(i=0;i<k;i++)
+    {
+        arr.unshift(arr.pop());
+    }
+    console.log(arr);
+    
+}
+Rotate([1,2,3,4,5],3);
+-------------------------------------------------------------------------
